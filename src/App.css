@@ -1,0 +1,87 @@
+:root{
+  --accent:#ff4d4f;
+  --muted:#6c757d;
+  --card-bg:#ffffff;
+  --page-bg:#f6f7fb;
+}
+body {
+  background: var(--page-bg);
+  color: #212529;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+}
+.header {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.card-restaurant {
+  border: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(20,20,30,0.06);
+  transition: transform .14s ease, box-shadow .14s ease;
+  background: linear-gradient(180deg, var(--card-bg), var(--card-bg));
+}
+.card-restaurant:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(20,20,30,0.12);
+}
+.card-img-top {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display:block;
+  background:#eee;
+}
+.card-body {
+  padding: 1rem;
+}
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.card-sub {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+.btn-view {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.35rem 0.7rem;
+}
+.meta-row {
+  display:flex;
+  gap:0.75rem;
+  align-items:center;
+  font-size:0.875rem;
+  color:var(--muted);
+}
+.filter-panel .card {
+  border-radius: 12px;
+  box-shadow:none;
+}
+.modal-content {
+  border-radius: 12px;
+  overflow:hidden;
+}
+.modal-image {
+  height: 240px;
+  object-fit: cover;
+  width: 100%;
+  display:block;
+}
+.skeleton {
+  background: linear-gradient(90deg,#eee,#f6f6f6,#eee);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+  border-radius: 6px;
+}
+@keyframes shimmer {
+  0%{ background-position: -200% 0; }
+  100%{ background-position: 200% 0; }
+}
+@media (min-width: 992px){
+  .card-img-top { height: 200px; }
+}
