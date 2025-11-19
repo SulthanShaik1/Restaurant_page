@@ -2,138 +2,145 @@
 import { useEffect, useMemo, useState } from "react";
 import type { Restaurant } from "../types";
 
-type FiltersLocal = {
-  cuisine: string; // "All" or actual cuisine
-  minRating: number;
-  sortBy: "rating" | "cost" | "delivery" | "";
-  search: string;
-};
-
-const INITIAL_FILTERS: FiltersLocal = {
-  cuisine: "All",
-  minRating: 0,
-  sortBy: "",
-  search: "",
-};
-
+// keep exported signature the same as before
 export function useRestaurants() {
   const [all, setAll] = useState<Restaurant[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [filters, setFilters] = useState<FiltersLocal>(INITIAL_FILTERS);
+
+  // expose friendly filters object (keeps legacy 'cuisine' string)
+  const [filters, setFilters] = useState<any>({
+    search: "",
+    cuisine: "All",
+    cuisines: [] as string[],
+    minRating: 0,
+    sortBy: "",
+  });
 
   useEffect(() => {
+    let mounted = true;
     setLoading(true);
-    const base = import.meta.env.BASE_URL || "/";
-    fetch(`${base}data/restaurants.json`)
-      .then((r) => {
-        if (!r.ok) throw new Error("Failed to load data");
-        return r.json();
-      })
-      .then((data: Restaurant[]) => {
-        setAll(Array.isArray(data) ? data : []);
+
+    // Vite-friendly fetch: respects BASE_URL when app is hosted on a subpath (e.g. /Restaurant_page/)
+    fetch(`${import.meta.env.BASE_URL}data/restaurants.json`)
+      .then(async (res) => {
+        if (!res.ok) throw new Error(`Failed to load restaurants.json: ${res.status}`);
+        const data = (await res.json()) as Restaurant[];
+        if (!mounted) return;
+        const normalized = data.map((r) => {
+          const clone: Restaurant = { ...r } as Restaurant;
+          if (Array.isArray((r as any).cuisine)) {
+            clone.cuisines = (r as any).cuisine;
+          } else if (Array.isArray((r as any).cuisines)) {
+            clone.cuisines = (r as any).cuisines;
+          } else if (typeof (r as any).cuisine === "string") {
+            clone.cuisines = (r as any).cuisine.split(",").map((s: string) => s.trim()).filter(Boolean);
+          } else {
+            clone.cuisines = [];
+          }
+          return clone;
+        });
+        setAll(normalized);
         setLoading(false);
       })
-      .catch((e) => {
-        setError(String(e));
+      .catch((err) => {
+        if (!mounted) return;
+        setError(String(err?.message ?? err));
         setLoading(false);
       });
+
+    return () => {
+      mounted = false;
+    };
   }, []);
 
-  // debounced search value derived from filters.search
-  const [debouncedSearch, setDebouncedSearch] = useState(filters.search);
-  useEffect(() => {
-    const id = setTimeout(() => setDebouncedSearch(filters.search), 300);
-    return () => clearTimeout(id);
-  }, [filters.search]);
-
-  // derive unique cuisines robustly (supports string, array, or comma-separated)
   const cuisines = useMemo(() => {
-    const set = new Set<string>();
-    all.forEach((r) => {
-      const c = (r as any).cuisine;
-      if (!c) return;
-      if (Array.isArray(c)) {
-        c.forEach((ci) => {
-          if (ci) set.add(String(ci).trim());
-        });
-      } else if (typeof c === "string") {
-        c.split(",").map((s) => s.trim()).filter(Boolean).forEach((ci) => set.add(ci));
-      } else {
-        set.add(String(c));
-      }
-    });
-    return ["All", ...Array.from(set)];
+    const s = new Set<string>();
+    all.forEach((r) => (r.cuisines || []).forEach((c) => c && s.add(c)));
+    return ["All", ...Array.from(s).sort()];
   }, [all]);
 
-  // filter + sort logic with safe guards
-  const filtered = useMemo(() => {
-    let res = all.slice();
+  const setFilter = (key: string, value: any) => {
+    setFilters((prev: any) => {
+      const next = { ...prev };
+      if (key === "cuisine") {
+        if (Array.isArray(value)) {
+          next.cuisines = value;
+          next.cuisine = value.length === 0 ? "All" : value.join(",");
+        } else if (typeof value === "string") {
+          next.cuisine = value;
+          next.cuisines = value === "All" || !value ? [] : value.split(",").map((s: string) => s.trim()).filter(Boolean);
+        } else {
+          next.cuisine = "All";
+          next.cuisines = [];
+        }
+      } else if (key === "cuisines") {
+        next.cuisines = Array.isArray(value) ? value : [];
+        next.cuisine = next.cuisines.length === 0 ? "All" : next.cuisines.join(",");
+      } else if (key === "search") {
+        next.search = String(value ?? "");
+      } else if (key === "minRating") {
+        next.minRating = Number(value ?? 0);
+      } else if (key === "sortBy") {
+        next.sortBy = String(value ?? "");
+      } else {
+        next[key] = value;
+      }
+      return next;
+    });
+  };
 
-    // Cuisine filter
-    if (filters.cuisine && filters.cuisine !== "All") {
-      res = res.filter((r) => {
-        const c = (r as any).cuisine;
-        if (!c) return false;
-        if (Array.isArray(c)) return c.includes(filters.cuisine);
-        if (typeof c === "string") return c.toLowerCase().includes(String(filters.cuisine).toLowerCase());
-        return String(c).toLowerCase().includes(String(filters.cuisine).toLowerCase());
-      });
+  const results = useMemo(() => {
+    if (!all || all.length === 0) return [];
+
+    const search = (filters.search ?? "").toString().trim().toLowerCase();
+    const minRating = Number(filters.minRating ?? 0);
+    const sortBy = (filters.sortBy ?? "") as string;
+
+    let filterCuisines: string[] = [];
+    if (Array.isArray(filters.cuisines) && filters.cuisines.length > 0) {
+      filterCuisines = filters.cuisines;
+    } else if (typeof filters.cuisine === "string" && filters.cuisine && filters.cuisine !== "All") {
+      filterCuisines = filters.cuisine.split(",").map((s: string) => s.trim()).filter(Boolean);
     }
 
-    // Min rating
-    if (Number(filters.minRating) > 0) {
-      res = res.filter((r) => {
-        const nr = Number((r as any).rating ?? 0);
-        return nr >= filters.minRating;
-      });
+    const filtered = all.filter((r) => {
+      if (minRating > 0 && (r.rating ?? 0) < minRating) return false;
+
+      if (filterCuisines.length > 0) {
+        const rcuis = Array.isArray(r.cuisines) ? r.cuisines : (typeof r.cuisine === "string" ? r.cuisine.split(",").map(s => s.trim()) : []);
+        const intersects = rcuis.some((c) => filterCuisines.includes(c));
+        if (!intersects) return false;
+      }
+
+      if (search) {
+        const inName = (r.name ?? "").toLowerCase().includes(search);
+        const inDesc = (r.shortDescription ?? "").toLowerCase().includes(search);
+        const inMenu = Array.isArray(r.menu) && r.menu.some((m) => (m.name ?? "").toLowerCase().includes(search));
+        const inCuisine = (r.cuisines || []).some((c) => c.toLowerCase().includes(search));
+        if (!(inName || inDesc || inMenu || inCuisine)) return false;
+      }
+
+      return true;
+    });
+
+    const sorted = [...filtered];
+    if (sortBy === "rating") {
+      sorted.sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
+    } else if (sortBy === "delivery") {
+      sorted.sort((a, b) => (a.deliveryTimeMins ?? 0) - (b.deliveryTimeMins ?? 0));
+    } else if (sortBy === "cost") {
+      sorted.sort((a, b) => (a.costForTwo ?? 0) - (b.costForTwo ?? 0));
     }
-
-    // Search (debounced)
-    if (debouncedSearch && debouncedSearch.trim()) {
-      const s = debouncedSearch.trim().toLowerCase();
-      res = res.filter((r) => {
-        const name = String(r.name ?? "").toLowerCase();
-        const short = String((r as any).shortDescription ?? (r as any).description ?? "").toLowerCase();
-        const cuisineJoined =
-          Array.isArray((r as any).cuisine) ? (r as any).cuisine.join(" ").toLowerCase()
-          : String((r as any).cuisine ?? "").toLowerCase();
-        const inMenu =
-          Array.isArray((r as any).menu) &&
-          (r as any).menu.some((m: any) => String(m.name ?? "").toLowerCase().includes(s));
-
-        return (
-          name.includes(s) ||
-          short.includes(s) ||
-          cuisineJoined.includes(s) ||
-          inMenu
-        );
-      });
-    }
-
-    // Sorting
-    if (filters.sortBy === "rating") {
-      res.sort((a, b) => (Number((b as any).rating) || 0) - (Number((a as any).rating) || 0));
-    } else if (filters.sortBy === "cost") {
-      res.sort((a, b) => (Number((a as any).costForTwo) || 0) - (Number((b as any).costForTwo) || 0));
-    } else if (filters.sortBy === "delivery") {
-      res.sort((a, b) => (Number((a as any).deliveryTimeMins) || 999) - (Number((b as any).deliveryTimeMins) || 999));
-    }
-
-    return res;
-  }, [all, filters.cuisine, filters.minRating, filters.sortBy, debouncedSearch]);
-
-  function setFilter<K extends keyof FiltersLocal>(k: K, value: FiltersLocal[K]) {
-    setFilters((s) => ({ ...s, [k]: value }));
-  }
+    return sorted;
+  }, [all, filters]);
 
   return {
-    all,
-    loading,
-    error,
-    results: filtered,
+    results,
     cuisines,
     filters,
     setFilter,
+    loading,
+    error,
   };
 }

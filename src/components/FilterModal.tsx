@@ -19,33 +19,71 @@ export default function FilterModal({
   onApply,
   onClear,
 }: Props) {
-  const [query, setQuery] = useState(initial?.query ?? "");
-  const [cuisine, setCuisine] = useState<string | null>(initial?.cuisine ?? null);
+  const [query, setQuery] = useState<string>(initial?.query ?? "");
+  const [selectedSet, setSelectedSet] = useState<Set<string>>(() => {
+    const s = new Set<string>();
+    if (initial?.cuisines && Array.isArray(initial.cuisines)) {
+      initial.cuisines.forEach((c) => c && s.add(c));
+    } else if (initial?.cuisine) {
+      initial.cuisine
+        .split(",")
+        .map((p) => p.trim())
+        .filter(Boolean)
+        .forEach((c) => s.add(c));
+    }
+    return s;
+  });
+
+  // modal minRating is nullable while Filters.minRating is a number | undefined.
   const [minRating, setMinRating] = useState<number | null>(initial?.minRating ?? null);
   const [sortBy, setSortBy] = useState<Filters["sortBy"]>(initial?.sortBy ?? "relevance");
 
   useEffect(() => {
     if (show) {
       setQuery(initial?.query ?? "");
-      setCuisine(initial?.cuisine ?? null);
+      const s = new Set<string>();
+      if (initial?.cuisines && Array.isArray(initial.cuisines)) {
+        initial.cuisines.forEach((c) => c && s.add(c));
+      } else if (initial?.cuisine) {
+        initial.cuisine
+          .split(",")
+          .map((p) => p.trim())
+          .filter(Boolean)
+          .forEach((c) => s.add(c));
+      }
+      setSelectedSet(s);
       setMinRating(initial?.minRating ?? null);
       setSortBy(initial?.sortBy ?? "relevance");
     }
+    // intentionally only respond to modal open/initial changes
   }, [show, initial]);
 
-  const apply = () => {
-    onApply({
-      query,
-      cuisine,
-      minRating,
-      sortBy,
+  const toggleCuisine = (c: string) => {
+    setSelectedSet((prev) => {
+      const next = new Set(prev);
+      if (next.has(c)) next.delete(c);
+      else next.add(c);
+      return next;
     });
+  };
+
+  const apply = () => {
+    const cuisinesArray = Array.from(selectedSet);
+    // Ensure we pass types that match Filters: don't pass null for minRating
+    const filtersToSend: Filters = {
+      query,
+      cuisines: cuisinesArray,
+      // convert null -> undefined so it fits optional number type
+      minRating: minRating ?? undefined,
+      sortBy: sortBy as Filters["sortBy"],
+    };
+    onApply(filtersToSend);
     onClose();
   };
 
   const clearAll = () => {
     setQuery("");
-    setCuisine(null);
+    setSelectedSet(new Set());
     setMinRating(null);
     setSortBy("relevance");
     if (onClear) onClear();
@@ -78,23 +116,31 @@ export default function FilterModal({
               />
             </div>
 
-            {/* Cuisine chips */}
+            {/* Cuisine multi-select */}
             <div className="mb-3">
               <label className="form-label small">Cuisine</label>
               <div className="d-flex flex-wrap gap-2">
                 {cuisines.map((c) => {
-                  const active = cuisine === c;
+                  const active = selectedSet.has(c);
                   return (
-                    <button
+                    <label
                       key={c}
-                      type="button"
-                      className={`btn btn-sm ${active ? "btn-accent" : "btn-outline-secondary"}`}
-                      onClick={() => setCuisine(active ? null : c)}
+                      style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
+                      className="btn btn-sm btn-outline-secondary"
                     >
-                      {c}
-                    </button>
+                      <input
+                        type="checkbox"
+                        checked={active}
+                        onChange={() => toggleCuisine(c)}
+                        style={{ marginRight: 6 }}
+                      />
+                      <span style={{ pointerEvents: "none" }}>{c}</span>
+                    </label>
                   );
                 })}
+              </div>
+              <div className="small text-muted mt-1">
+                Selected: {Array.from(selectedSet).length > 0 ? Array.from(selectedSet).join(", ") : "Any"}
               </div>
             </div>
 
@@ -151,4 +197,3 @@ export default function FilterModal({
     </div>
   );
 }
-

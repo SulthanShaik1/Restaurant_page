@@ -15,15 +15,21 @@ export default function App() {
 
   const modalInitial: ModalFilters = {
     query: filters.search ?? "",
-    cuisine: filters.cuisine === "All" ? "" : filters.cuisine,
+    cuisines: Array.isArray(filters.cuisines)
+      ? filters.cuisines
+      : typeof filters.cuisine === "string" && filters.cuisine !== "All"
+      ? filters.cuisine.split(",").map((s: string) => s.trim()).filter(Boolean)
+      : [],
     minRating: filters.minRating ?? 0,
-    sortBy: filters.sortBy === "" ? "relevance" : (filters.sortBy as ModalFilters["sortBy"]),
+    sortBy: (filters.sortBy === "" ? "relevance" : (filters.sortBy as ModalFilters["sortBy"])) ?? "relevance",
   };
 
   const onApplyModal = (f: ModalFilters) => {
     setFilter("search", f.query ?? "");
-    setFilter("cuisine", f.cuisine && f.cuisine !== "" ? f.cuisine : "All");
+    if (Array.isArray(f.cuisines)) setFilter("cuisines", f.cuisines);
+    else if ((f as any).cuisine) setFilter("cuisine", (f as any).cuisine);
     setFilter("minRating", f.minRating ?? 0);
+
     if (f.sortBy === "rating") setFilter("sortBy", "rating");
     else if (f.sortBy === "deliveryTime") setFilter("sortBy", "delivery");
     else if (f.sortBy === "minOrder") setFilter("sortBy", "cost");
@@ -33,7 +39,7 @@ export default function App() {
 
   const onClearModal = () => {
     setFilter("search", "");
-    setFilter("cuisine", "All");
+    setFilter("cuisines", []);
     setFilter("minRating", 0);
     setFilter("sortBy", "");
     setFilterOpen(false);
@@ -44,7 +50,7 @@ export default function App() {
       <header className="header d-flex align-items-center justify-content-between px-3">
         <div>
           <h1 className="header-accent">KhaanaNow24</h1>
-          <small className="text-muted">React + TypeScript • Demo</small>
+          <h5 className="text-muted">Bringing your favourite food even closer to your door.</h5>
         </div>
 
         <div className="d-flex align-items-center gap-3">
@@ -59,14 +65,13 @@ export default function App() {
 
           <button className="btn btn-accent">Sign In</button>
         </div>
-
       </header>
 
       <main className="container py-4">
         <div className="d-flex justify-content-between align-items-center mb-3">
           <div>
-            {filters.cuisine && filters.cuisine !== "All" && (
-              <span className="ms-3 text-muted">Cuisine: {filters.cuisine}</span>
+            {Array.isArray(filters.cuisines) && filters.cuisines.length > 0 && (
+              <span className="ms-3 text-muted">Cuisine: {filters.cuisines.join(", ")}</span>
             )}
             {filters.minRating > 0 && (
               <span className="ms-3 text-muted">Min rating: {filters.minRating}</span>
@@ -74,12 +79,12 @@ export default function App() {
           </div>
 
           <div>
-            {(filters.search || (filters.cuisine && filters.cuisine !== "All") || filters.minRating > 0) && (
+            {(filters.search || (Array.isArray(filters.cuisines) && filters.cuisines.length > 0) || filters.minRating > 0) && (
               <button
                 className="btn btn-sm btn-outline-secondary"
                 onClick={() => {
                   setFilter("search", "");
-                  setFilter("cuisine", "All");
+                  setFilter("cuisines", []);
                   setFilter("minRating", 0);
                   setFilter("sortBy", "");
                 }}
