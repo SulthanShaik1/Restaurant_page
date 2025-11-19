@@ -5,23 +5,23 @@ This is a clean and simple restaurant listing web application that I created for
 The app shows restaurants, allows searching, filtering, and opens a modal to view more details.  
 I kept the UI minimal, fast, and easy to use.
 
----
+---------------------------------------------------------------------
 
-## 🚀 Features I Implemented
+##  Features I Implemented
 
-- ✔ Restaurant list display  
-- ✔ Search (works on name + menu items)  
-- ✔ Filter by cuisine  
-- ✔ Filter by minimum rating  
-- ✔ Simple sorting support  
-- ✔ Restaurant modal with details + menu  
-- ✔ Responsive layout for mobile + desktop  
-- ✔ Images with fallback handling  
-- ✔ Clean UI using Bootstrap + custom CSS  
+- Restaurant list display  
+- Search (works on name + menu items)  
+- Filter by cuisine  
+- Filter by minimum rating  
+- Simple sorting support  
+- Restaurant modal with details + menu  
+- Responsive layout for mobile + desktop  
+- Images with fallback handling  
+- Clean UI using Bootstrap + custom CSS  
 
----
+----------------------------------------------------------------------
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 **Frontend:**  
 - React  
@@ -34,15 +34,15 @@ I kept the UI minimal, fast, and easy to use.
 - Local JSON file (`public/data/restaurants.json`)  
 - No backend or database required for this assignment  
 
----
+-----------------------------------------------------------------------
 
-## 📸 Screenshots (optional)
+##  Screenshots (optional)
 *(You can add images later before submitting)*
 
 
----
+------------------------------------------------------------------------
 
-## 📂 Project Structure
+##  Project Structure
 
 project/
 │── public/
@@ -62,7 +62,9 @@ project/
 │
 └── README.md
 
-## ▶️ How to Run the Project
+-------------------------------------------------------------------------
+
+##  How to Run the Project
 
 ### 1. Install dependencies:
 npm install
@@ -73,9 +75,9 @@ npm run dev
 ### 3. Open in browser:
 http://localhost:5173
 
----
+---------------------------------------------------------------------------
 
-## 📌 Notes
+##  Notes
 
 - All restaurant data is inside `public/data/restaurants.json`  
 - Entire application runs on the frontend  
@@ -83,9 +85,9 @@ http://localhost:5173
 - UI is kept light and simple  
 - Built specifically for the assignment  
 
----
+----------------------------------------------------------------------------
 
-## 🎥 Demo Video  
+##  Demo Video  
 (A separate video has been recorded showing:)  
 - How the app works  
 - Search and filters  
@@ -93,9 +95,9 @@ http://localhost:5173
 - Code walkthrough  
 - Folder structure  
 
----
+-----------------------------------------------------------------------------
 
-## 👤 Developer  
+##  Developer  
 **Shaik Sulthan**
 
 I built this project fully using React + TypeScript and used simple UI techniques to keep everything readable and clean.

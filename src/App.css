@@ -1,38 +1,90 @@
 :root{
-  --accent:#ff4d4f;
-  --muted:#6c757d;
-  --card-bg:#ffffff;
-  --page-bg:#f6f7fb;
+  --accent: #ff4d4f;      /* main red accent */
+  --muted: #6c757d;
+  --card-bg: #ffffff;
+  --page-bg: #fff6f6;     /* subtle warm background */
+  --radius: 12px;
+  --shadow-strong: 0 12px 30px rgba(255, 77, 79, 0.12);
+  --shadow-soft: 0 6px 18px rgba(20,20,30,0.06);
 }
+
+/* Page */
 body {
   background: var(--page-bg);
   color: #212529;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   margin: 0;
 }
+
+/* Header */
 .header {
+  background: var(--page-bg);
   padding: 1.2rem 0;
   border-bottom: 1px solid rgba(0,0,0,0.04);
 }
+.header-accent {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Header buttons: subtle default, red-on-hover */
+.header .filters-btn,
+.header .btn-outline-secondary,
+.header .btn-accent {
+  background-color: rgba(255,255,255,0.9);
+  color: #222;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 4px 14px rgba(20,20,30,0.03);
+  transition: background-color .18s ease, color .18s ease, transform .12s ease, box-shadow .18s ease;
+  border-radius: 10px;
+  padding: 0.45rem 0.8rem;
+  font-weight: 600;
+}
+
+/* Keep filters-btn layout */
+.header .filters-btn { 
+  display: inline-flex; 
+  gap: 0.6rem; 
+  align-items: center; 
+}
+
+/* Hover turn red */
+.header .filters-btn:hover,
+.header .btn-outline-secondary:hover,
+.header .btn-accent:hover {
+  background-color: var(--accent) !important;
+  color: #fff !important;
+  border-color: var(--accent) !important;
+  box-shadow: var(--shadow-strong);
+  transform: translateY(-2px);
+}
+
+/* Restaurant card */
 .card-restaurant {
   border: 0;
-  border-radius: 12px;
+  border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(20,20,30,0.06);
   transition: transform .14s ease, box-shadow .14s ease;
-  background: linear-gradient(180deg, var(--card-bg), var(--card-bg));
+  background: var(--card-bg);
+  width: 100%;
 }
+
 .card-restaurant:hover{
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(20,20,30,0.12);
+  box-shadow: var(--shadow-strong);
 }
+
+/* Images */
 .card-img-top {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
   display:block;
   background:#eee;
 }
+
+/* Card body */
 .card-body {
   padding: 1rem;
 }
@@ -44,13 +96,33 @@ body {
   color: var(--muted);
   font-size: 0.875rem;
 }
+
+/* Buttons */
 .btn-view {
   background: var(--accent);
   color: #fff;
   border-radius: 8px;
   font-weight: 600;
   padding: 0.35rem 0.7rem;
+  border: none;
+  transition: opacity .12s ease, transform .06s ease;
+  box-shadow: 0 6px 18px rgba(255,77,79,0.12);
 }
+.btn-view:hover { opacity: .95; transform: translateY(-1px); }
+
+/* Global accent button */
+.btn-accent {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.btn-accent-outline {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: transparent;
+}
+
+/* Meta row */
 .meta-row {
   display:flex;
   gap:0.75rem;
@@ -58,10 +130,8 @@ body {
   font-size:0.875rem;
   color:var(--muted);
 }
-.filter-panel .card {
-  border-radius: 12px;
-  box-shadow:none;
-}
+
+/* Modal */
 .modal-content {
   border-radius: 12px;
   overflow:hidden;
@@ -72,16 +142,71 @@ body {
   width: 100%;
   display:block;
 }
+
+/* Skeleton shimmer */
 .skeleton {
   background: linear-gradient(90deg,#eee,#f6f6f6,#eee);
   background-size: 200% 100%;
   animation: shimmer 1.4s linear infinite;
   border-radius: 6px;
 }
-@keyframes shimmer {
-  0%{ background-position: -200% 0; }
-  100%{ background-position: 200% 0; }
+
+/* Filters button fallback */
+.filters-btn {
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0.45rem 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(20,20,30,0.04);
+  cursor: pointer;
 }
+
+/* dot */
+.filters-btn .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 3px 10px rgba(255,77,79,0.18);
+}
+
+/* FAB */
+.filters-fab {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1400;
+  display: none;
+  border-radius: 999px;
+  padding: 0.6rem 0.9rem;
+  box-shadow: 0 8px 30px rgba(20,20,30,0.12);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .filters-fab { display: inline-flex; align-items:center; gap:.6rem; }
+  .filters-btn.header-only { display: none; }
+}
+
+/* Cursor */
+.pointer { cursor: pointer; }
+
 @media (min-width: 992px){
-  .card-img-top { height: 200px; }
+  .card-img-top { height: 260px; }
+}
+
+/* Equal-height cards */
+.row > [class*="col-"] {
+  display: flex;
+}
+
+.row > [class*="col-"] > .card-restaurant {
+  flex: 1 1 auto;
 }

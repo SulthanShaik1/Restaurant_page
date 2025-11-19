@@ -1,16 +1,21 @@
 :root{
-  --zomato-red: #ff3b30;
-  --accent: var(--zomato-red);
+  --accent: #ff4d4f;
 }
+
+/* Base page */
 body {
-  background: #f6f6f7;
+  background: var(--page-bg, #fff6f6); /* fallback to main page-bg */
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
+
+/* Small image tweak used by some components */
 .card-img-top {
   object-fit: cover;
   height: 160px;
 }
+
+/* Tiny utilities */
 .pointer { cursor: pointer; }
-.header-accent { color: var(--accent); }
+.header-accent { color: var(--accent); font-weight:700; }
 .btn-accent { background: var(--accent); border-color: var(--accent); color: #fff; }
 .btn-accent-outline { color: var(--accent); border-color: var(--accent); }
