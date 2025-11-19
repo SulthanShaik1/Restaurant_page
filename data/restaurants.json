@@ -2,482 +2,1057 @@
   {
     "id": "r1",
     "name": "CTR (Central Tiffin Room)",
-    "cuisine": ["South Indian", "Breakfast"],
+    "cuisine": [
+      "South Indian",
+      "Breakfast"
+    ],
     "rating": 4.7,
     "costForTwo": 300,
     "image": "https://cdn.tasteatlas.com/images/restaurants/1fbb8dde25bf4cdd827fb4388f32ecf1.jpg?m=facebook",
     "deliveryTimeMins": 25,
     "shortDescription": "Malleshwaram favourite known for benne masala dosa and filter coffee.",
     "menu": [
-      { "id": "m1", "name": "Benne Masala Dosa", "price": 180 },
-      { "id": "m2", "name": "Set Dosa with Chutney", "price": 120 },
-      { "id": "m3", "name": "Rava Idli", "price": 100 },
-      { "id": "m4", "name": "Filter Coffee", "price": 60 }
+      {
+        "id": "m1",
+        "name": "Benne Masala Dosa",
+        "price": 180
+      },
+      {
+        "id": "m2",
+        "name": "Set Dosa with Chutney",
+        "price": 120
+      },
+      {
+        "id": "m3",
+        "name": "Rava Idli",
+        "price": 100
+      },
+      {
+        "id": "m4",
+        "name": "Filter Coffee",
+        "price": 60
+      }
     ]
   },
   {
     "id": "r2",
     "name": "Vidyarthi Bhavan",
-    "cuisine": ["South Indian", "Breakfast"],
+    "cuisine": [
+      "South Indian",
+      "Breakfast"
+    ],
     "rating": 4.6,
     "costForTwo": 260,
     "image": "https://i0.wp.com/lifeisavacation.in/wp-content/uploads/2016/09/VidyartiBhavan-Entrance.jpg?resize=700%2C394",
     "deliveryTimeMins": 28,
     "shortDescription": "Crispy masala dosa and old-school Bangalore tiffin culture in Basavanagudi.",
     "menu": [
-      { "id": "m5", "name": "Masala Dosa (Crispy)", "price": 160 },
-      { "id": "m6", "name": "Rava Masala Dosa", "price": 150 },
-      { "id": "m7", "name": "Mysore Bonda", "price": 70 },
-      { "id": "m8", "name": "Filter Coffee (Large)", "price": 50 }
+      {
+        "id": "m5",
+        "name": "Masala Dosa (Crispy)",
+        "price": 160
+      },
+      {
+        "id": "m6",
+        "name": "Rava Masala Dosa",
+        "price": 150
+      },
+      {
+        "id": "m7",
+        "name": "Mysore Bonda",
+        "price": 70
+      },
+      {
+        "id": "m8",
+        "name": "Filter Coffee (Large)",
+        "price": 50
+      }
     ]
   },
   {
     "id": "r3",
     "name": "MTR (Mavalli Tiffin Rooms)",
-    "cuisine": ["South Indian", "Traditional"],
+    "cuisine": [
+      "South Indian",
+      "Traditional"
+    ],
     "rating": 4.7,
     "costForTwo": 350,
     "image": "https://assets.cntraveller.in/photos/61cc8c3cfe9643cf6771b0df/16:9/w_1920,h_1080,c_limit/MTR_Bengaluru.jpg",
     "deliveryTimeMins": 30,
     "shortDescription": "Legendary thalis, rava idli and strong filter coffee — a Bangalore staple.",
     "menu": [
-      { "id": "m9", "name": "Rava Idli with Sambar", "price": 110 },
-      { "id": "m10", "name": "Masala Dosa", "price": 140 },
-      { "id": "m11", "name": "MTR Special Thali", "price": 220 },
-      { "id": "m12", "name": "Kesari Bath (dessert)", "price": 80 }
+      {
+        "id": "m9",
+        "name": "Rava Idli with Sambar",
+        "price": 110
+      },
+      {
+        "id": "m10",
+        "name": "Masala Dosa",
+        "price": 140
+      },
+      {
+        "id": "m11",
+        "name": "MTR Special Thali",
+        "price": 220
+      },
+      {
+        "id": "m12",
+        "name": "Kesari Bath (dessert)",
+        "price": 80
+      }
     ]
   },
   {
     "id": "r4",
     "name": "Vegan/Vegetarian: Veena Stores",
-    "cuisine": ["South Indian", "Vegetarian"],
+    "cuisine": [
+      "South Indian",
+      "Vegetarian"
+    ],
     "rating": 4.5,
     "costForTwo": 240,
     "image": "https://d10y46cwh6y6x1.cloudfront.net/images/0BB9B932-DCD4-480D-B763-3C8C5B12B3BF.png",
     "deliveryTimeMins": 22,
     "shortDescription": "Malleshwaram classic for benne dose, filter coffee and soft idlis.",
     "menu": [
-      { "id": "m13", "name": "Benne Masala Dosa", "price": 160 },
-      { "id": "m14", "name": "Idli Sambhar", "price": 80 },
-      { "id": "m15", "name": "Kesari Bath", "price": 90 },
-      { "id": "m16", "name": "Filter Coffee", "price": 50 }
+      {
+        "id": "m13",
+        "name": "Benne Masala Dosa",
+        "price": 160
+      },
+      {
+        "id": "m14",
+        "name": "Idli Sambhar",
+        "price": 80
+      },
+      {
+        "id": "m15",
+        "name": "Kesari Bath",
+        "price": 90
+      },
+      {
+        "id": "m16",
+        "name": "Filter Coffee",
+        "price": 50
+      }
     ]
   },
   {
     "id": "r5",
     "name": "Meghana Foods",
-    "cuisine": ["Biryani", "Andhra"],
+    "cuisine": [
+      "Biryani",
+      "Andhra"
+    ],
     "rating": 4.4,
     "costForTwo": 550,
     "image": "https://bharatfranchise.in/wp-content/uploads/2024/11/NOV-BLOG-02.jpg",
     "deliveryTimeMins": 32,
     "shortDescription": "Well-known for spicy Andhra-style biryanis and rich gravies.",
     "menu": [
-      { "id": "m17", "name": "Chicken Biryani (Andhra)", "price": 360 },
-      { "id": "m18", "name": "Gongura Mutton Curry", "price": 420 },
-      { "id": "m19", "name": "Mirchi Bajji (side)", "price": 90 },
-      { "id": "m20", "name": "Ghee Rice (side)", "price": 120 }
+      {
+        "id": "m17",
+        "name": "Chicken Biryani (Andhra)",
+        "price": 360
+      },
+      {
+        "id": "m18",
+        "name": "Gongura Mutton Curry",
+        "price": 420
+      },
+      {
+        "id": "m19",
+        "name": "Mirchi Bajji (side)",
+        "price": 90
+      },
+      {
+        "id": "m20",
+        "name": "Ghee Rice (side)",
+        "price": 120
+      }
     ]
   },
   {
     "id": "r6",
     "name": "Empire Restaurant",
-    "cuisine": ["Arabian", "Fast Food"],
+    "cuisine": [
+      "Arabian",
+      "Fast Food"
+    ],
     "rating": 4.3,
     "costForTwo": 600,
     "image": "https://shabosphere.wordpress.com/wp-content/uploads/2017/06/img_0330.jpg",
     "deliveryTimeMins": 34,
     "shortDescription": "Late-night favourite for kebabs, biryani, shawarma and rolls.",
     "menu": [
-      { "id": "m21", "name": "Hyderabadi Chicken Biryani", "price": 340 },
-      { "id": "m22", "name": "Shawarma Roll", "price": 180 },
-      { "id": "m23", "name": "Paneer Tikka", "price": 240 },
-      { "id": "m24", "name": "Chicken 65 (starter)", "price": 220 }
+      {
+        "id": "m21",
+        "name": "Hyderabadi Chicken Biryani",
+        "price": 340
+      },
+      {
+        "id": "m22",
+        "name": "Shawarma Roll",
+        "price": 180
+      },
+      {
+        "id": "m23",
+        "name": "Paneer Tikka",
+        "price": 240
+      },
+      {
+        "id": "m24",
+        "name": "Chicken 65 (starter)",
+        "price": 220
+      }
     ]
   },
   {
     "id": "r7",
     "name": "Truffles",
-    "cuisine": ["Cafe", "Burgers"],
+    "cuisine": [
+      "Cafe",
+      "Burgers"
+    ],
     "rating": 4.2,
     "costForTwo": 700,
     "image": "https://i.ytimg.com/vi/paJSeQKjIF4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBH_2IAiHVusNUorQvrYqNIGxdyZw",
     "deliveryTimeMins": 30,
     "shortDescription": "Popular hangout famous for juicy burgers, shakes and hearty portions.",
     "menu": [
-      { "id": "m25", "name": "Truffle Classic Burger", "price": 320 },
-      { "id": "m26", "name": "Chicken Wings (6 pc)", "price": 280 },
-      { "id": "m27", "name": "Cheesy Fries", "price": 160 },
-      { "id": "m28", "name": "Chocolate Shake", "price": 180 },
-      { "id": "m29", "name": "Brownie Sundae", "price": 220 }
+      {
+        "id": "m25",
+        "name": "Truffle Classic Burger",
+        "price": 320
+      },
+      {
+        "id": "m26",
+        "name": "Chicken Wings (6 pc)",
+        "price": 280
+      },
+      {
+        "id": "m27",
+        "name": "Cheesy Fries",
+        "price": 160
+      },
+      {
+        "id": "m28",
+        "name": "Chocolate Shake",
+        "price": 180
+      },
+      {
+        "id": "m29",
+        "name": "Brownie Sundae",
+        "price": 220
+      }
     ]
   },
   {
     "id": "r8",
     "name": "KFC (Koramangala)",
-    "cuisine": ["Fast Food", "Chicken"],
+    "cuisine": [
+      "Fast Food",
+      "Chicken"
+    ],
     "rating": 4.1,
     "costForTwo": 600,
     "image": "https://b.zmtcdn.com/data/pictures/chains/4/50574/24697b617bb8aaf5b1c7df9a7074a662.jpg?fit=around|960:500&crop=960:500;*,*",
     "deliveryTimeMins": 24,
     "shortDescription": "Quick buckets, Zinger burgers, popcorn chicken and sides.",
     "menu": [
-      { "id": "m30", "name": "Zinger Burger", "price": 200 },
-      { "id": "m31", "name": "6 pc Hot & Crispy Bucket", "price": 799 },
-      { "id": "m32", "name": "Popcorn Chicken", "price": 180 },
-      { "id": "m33", "name": "Mashed Potato (side)", "price": 90 }
+      {
+        "id": "m30",
+        "name": "Zinger Burger",
+        "price": 200
+      },
+      {
+        "id": "m31",
+        "name": "6 pc Hot & Crispy Bucket",
+        "price": 799
+      },
+      {
+        "id": "m32",
+        "name": "Popcorn Chicken",
+        "price": 180
+      },
+      {
+        "id": "m33",
+        "name": "Mashed Potato (side)",
+        "price": 90
+      }
     ]
   },
   {
     "id": "r9",
     "name": "Corner House Ice Creams",
-    "cuisine": ["Dessert", "Cafe"],
+    "cuisine": [
+      "Dessert",
+      "Cafe"
+    ],
     "rating": 4.5,
     "costForTwo": 350,
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiyYRJLuFj190Z3k6loBi7W8HOsjVxQXOuWQ&s",
     "deliveryTimeMins": 20,
     "shortDescription": "Famous for 'Death by Chocolate' and indulgent sundaes.",
     "menu": [
-      { "id": "m34", "name": "Death by Chocolate (Sundae)", "price": 250 },
-      { "id": "m35", "name": "Belgian Waffle with Ice Cream", "price": 220 },
-      { "id": "m36", "name": "Cold Coffee", "price": 120 },
-      { "id": "m37", "name": "Chocolate Fudge Brownie", "price": 200 }
+      {
+        "id": "m34",
+        "name": "Death by Chocolate (Sundae)",
+        "price": 250
+      },
+      {
+        "id": "m35",
+        "name": "Belgian Waffle with Ice Cream",
+        "price": 220
+      },
+      {
+        "id": "m36",
+        "name": "Cold Coffee",
+        "price": 120
+      },
+      {
+        "id": "m37",
+        "name": "Chocolate Fudge Brownie",
+        "price": 200
+      }
     ]
   },
   {
     "id": "r10",
     "name": "Byg Brewski",
-    "cuisine": ["Brewpub", "Continental"],
+    "cuisine": [
+      "Brewpub",
+      "Continental"
+    ],
     "rating": 4.0,
     "costForTwo": 1500,
     "image": "https://bangalore.ind.in/wp-content/uploads/2019/03/BYG-Brewski-Hennur-1.jpg",
     "deliveryTimeMins": 50,
     "shortDescription": "Brewpub with craft beers, pizzas and bigplates for groups.",
     "menu": [
-      { "id": "m38", "name": "Woodfired Pizza", "price": 480 },
-      { "id": "m39", "name": "Craft Lager (500ml)", "price": 350 },
-      { "id": "m40", "name": "Beer Battered Fish", "price": 450 },
-      { "id": "m41", "name": "Loaded Nachos", "price": 320 }
+      {
+        "id": "m38",
+        "name": "Woodfired Pizza",
+        "price": 480
+      },
+      {
+        "id": "m39",
+        "name": "Craft Lager (500ml)",
+        "price": 350
+      },
+      {
+        "id": "m40",
+        "name": "Beer Battered Fish",
+        "price": 450
+      },
+      {
+        "id": "m41",
+        "name": "Loaded Nachos",
+        "price": 320
+      }
     ]
   },
   {
     "id": "r11",
     "name": "Toit (Brewpub)",
-    "cuisine": ["Brewpub", "Pubs"],
+    "cuisine": [
+      "Brewpub",
+      "Pubs"
+    ],
     "rating": 4.4,
     "costForTwo": 1400,
     "image": "https://media-cdn.tripadvisor.com/media/photo-s/15/f2/e8/cf/photo3jpg.jpg",
     "deliveryTimeMins": 42,
     "shortDescription": "Popular microbrewery with pizzas, craft beers and lively vibe.",
     "menu": [
-      { "id": "m42", "name": "Toit Signature Pizza", "price": 450 },
-      { "id": "m43", "name": "BBQ Chicken Wings", "price": 380 },
-      { "id": "m44", "name": "Toit Pale Ale (glass)", "price": 220 },
-      { "id": "m45", "name": "Penne Arrabiata", "price": 320 }
+      {
+        "id": "m42",
+        "name": "Toit Signature Pizza",
+        "price": 450
+      },
+      {
+        "id": "m43",
+        "name": "BBQ Chicken Wings",
+        "price": 380
+      },
+      {
+        "id": "m44",
+        "name": "Toit Pale Ale (glass)",
+        "price": 220
+      },
+      {
+        "id": "m45",
+        "name": "Penne Arrabiata",
+        "price": 320
+      }
     ]
   },
   {
     "id": "r12",
     "name": "Karavalli",
-    "cuisine": ["Seafood", "Coastal"],
+    "cuisine": [
+      "Seafood",
+      "Coastal"
+    ],
     "rating": 4.6,
     "costForTwo": 1400,
     "image": "https://www.indian-travel-places.com/wp-content/uploads/2023/05/Karavalli-The-Gateway-Hotel-Residency-Road-Bangalore.png",
     "deliveryTimeMins": 48,
     "shortDescription": "Refined coastal Karnataka flavours and Mangalorean specialities.",
     "menu": [
-      { "id": "m46", "name": "Neer Dosa with Prawn Curry", "price": 620 },
-      { "id": "m47", "name": "Ambat (Fish Curry)", "price": 420 },
-      { "id": "m48", "name": "Kori Roti", "price": 240 },
-      { "id": "m49", "name": "Ghee Rice", "price": 130 }
+      {
+        "id": "m46",
+        "name": "Neer Dosa with Prawn Curry",
+        "price": 620
+      },
+      {
+        "id": "m47",
+        "name": "Ambat (Fish Curry)",
+        "price": 420
+      },
+      {
+        "id": "m48",
+        "name": "Kori Roti",
+        "price": 240
+      },
+      {
+        "id": "m49",
+        "name": "Ghee Rice",
+        "price": 130
+      }
     ]
   },
   {
     "id": "r13",
     "name": "Koshy's",
-    "cuisine": ["Cafe", "Continental"],
+    "cuisine": [
+      "Cafe",
+      "Continental"
+    ],
     "rating": 4.2,
     "costForTwo": 650,
     "image": "https://assets.cntraveller.in/photos/61caaf2587570a0f23699304/1:1/w_1080,h_1080,c_limit/Koshys%20Bengaluru.jpg",
     "deliveryTimeMins": 40,
     "shortDescription": "Old-world Bangalore cafe serving sandwiches, steaks and desserts.",
     "menu": [
-      { "id": "m50", "name": "Club Sandwich", "price": 320 },
-      { "id": "m51", "name": "Grilled Fish Steak", "price": 550 },
-      { "id": "m52", "name": "Espresso", "price": 120 },
-      { "id": "m53", "name": "Shepherd's Pie", "price": 420 }
+      {
+        "id": "m50",
+        "name": "Club Sandwich",
+        "price": 320
+      },
+      {
+        "id": "m51",
+        "name": "Grilled Fish Steak",
+        "price": 550
+      },
+      {
+        "id": "m52",
+        "name": "Espresso",
+        "price": 120
+      },
+      {
+        "id": "m53",
+        "name": "Shepherd's Pie",
+        "price": 420
+      }
     ]
   },
   {
     "id": "r14",
     "name": "Nandhini (Banquet & South Indian)",
-    "cuisine": ["South Indian", "Banquet"],
+    "cuisine": [
+      "South Indian",
+      "Banquet"
+    ],
     "rating": 4.1,
     "costForTwo": 480,
     "image": "https://content3.jdmagicbox.com/v2/comp/bangalore/51/080p4304251/catalogue/nandhini-deluxe-restaurant-jp-nagar-bangalore-south-indian-restaurants-ex5x2rmtqf.jpg",
     "deliveryTimeMins": 34,
     "shortDescription": "Popular banquet-style Karnataka meals, dosas and traditional plates.",
     "menu": [
-      { "id": "m54", "name": "Neer Dosa", "price": 120 },
-      { "id": "m55", "name": "Ragi Sangati", "price": 140 },
-      { "id": "m56", "name": "Mutton Curry (spicy)", "price": 420 },
-      { "id": "m57", "name": "Masala Dosa (plate)", "price": 150 }
+      {
+        "id": "m54",
+        "name": "Neer Dosa",
+        "price": 120
+      },
+      {
+        "id": "m55",
+        "name": "Ragi Sangati",
+        "price": 140
+      },
+      {
+        "id": "m56",
+        "name": "Mutton Curry (spicy)",
+        "price": 420
+      },
+      {
+        "id": "m57",
+        "name": "Masala Dosa (plate)",
+        "price": 150
+      }
     ]
   },
   {
     "id": "r15",
     "name": "Hole In The Wall Cafe",
-    "cuisine": ["Cafe", "Brunch"],
+    "cuisine": [
+      "Cafe",
+      "Brunch"
+    ],
     "rating": 4.3,
     "costForTwo": 700,
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrww7B4xNENABy-o-XwKcyhTO0EcOtOec2qA&s",
     "deliveryTimeMins": 30,
     "shortDescription": "Brunch favourite for pancakes, sandwiches and shakes.",
     "menu": [
-      { "id": "m58", "name": "Blueberry Pancakes", "price": 340 },
-      { "id": "m59", "name": "Eggs Benedict", "price": 380 },
-      { "id": "m60", "name": "Chicken & Waffles", "price": 480 },
-      { "id": "m61", "name": "Iced Latte", "price": 160 }
+      {
+        "id": "m58",
+        "name": "Blueberry Pancakes",
+        "price": 340
+      },
+      {
+        "id": "m59",
+        "name": "Eggs Benedict",
+        "price": 380
+      },
+      {
+        "id": "m60",
+        "name": "Chicken & Waffles",
+        "price": 480
+      },
+      {
+        "id": "m61",
+        "name": "Iced Latte",
+        "price": 160
+      }
     ]
   },
   {
     "id": "r16",
     "name": "Brahmin's Coffee Bar",
-    "cuisine": ["South Indian", "Breakfast"],
+    "cuisine": [
+      "South Indian",
+      "Breakfast"
+    ],
     "rating": 4.1,
     "costForTwo": 220,
     "image": "https://i0.wp.com/yummraj.com/wp-content/uploads/2016/10/img_0171.jpg?ssl=1",
     "deliveryTimeMins": 18,
     "shortDescription": "Quick filter coffee joint with simple idli-vada and tiffin items.",
     "menu": [
-      { "id": "m62", "name": "Rava Idli", "price": 90 },
-      { "id": "m63", "name": "Mysore Bonda", "price": 70 },
-      { "id": "m64", "name": "Filter Coffee", "price": 40 },
-      { "id": "m65", "name": "Plain Dosa", "price": 90 }
+      {
+        "id": "m62",
+        "name": "Rava Idli",
+        "price": 90
+      },
+      {
+        "id": "m63",
+        "name": "Mysore Bonda",
+        "price": 70
+      },
+      {
+        "id": "m64",
+        "name": "Filter Coffee",
+        "price": 40
+      },
+      {
+        "id": "m65",
+        "name": "Plain Dosa",
+        "price": 90
+      }
     ]
   },
   {
     "id": "r17",
     "name": "Taaza Thindi (Street Stall)",
-    "cuisine": ["Street Food", "South Indian"],
+    "cuisine": [
+      "Street Food",
+      "South Indian"
+    ],
     "rating": 4.2,
     "costForTwo": 180,
     "image": "https://images.jdmagicbox.com/v2/comp/bangalore/i2/080pxx80.xx80.220618221808.e4i2/catalogue/taaza-thindi-bethel-nagar-bangalore-restaurants-5B618q2Cnf.jpg",
     "deliveryTimeMins": 16,
     "shortDescription": "Street-side tiffin stall serving quick idlis, vadas and chutneys.",
     "menu": [
-      { "id": "m66", "name": "Rava Idli with Chutney", "price": 90 },
-      { "id": "m67", "name": "Medu Vada", "price": 60 },
-      { "id": "m68", "name": "Masala Chai", "price": 30 },
-      { "id": "m69", "name": "Benne Dose (small)", "price": 120 }
+      {
+        "id": "m66",
+        "name": "Rava Idli with Chutney",
+        "price": 90
+      },
+      {
+        "id": "m67",
+        "name": "Medu Vada",
+        "price": 60
+      },
+      {
+        "id": "m68",
+        "name": "Masala Chai",
+        "price": 30
+      },
+      {
+        "id": "m69",
+        "name": "Benne Dose (small)",
+        "price": 120
+      }
     ]
   },
   {
     "id": "r18",
     "name": "Khan Saheb Grills & Rolls",
-    "cuisine": ["Mughlai", "Rolls"],
+    "cuisine": [
+      "Mughlai",
+      "Rolls"
+    ],
     "rating": 4.3,
     "costForTwo": 400,
     "image": "https://lh3.googleusercontent.com/sBkpLlh1xPUtvu4XBhGPnfTNF0z62D3S8w6MRL0heVwVUjKOnX6V4B7pEkRMlvEtFyMD3xfLRoFYcHCdjlSb5Pmvvjc=w1200-rw",
     "deliveryTimeMins": 30,
     "shortDescription": "Famous for kebabs, rolls and Mughlai grills in compact portions.",
     "menu": [
-      { "id": "m70", "name": "Chicken Sheekh Roll", "price": 180 },
-      { "id": "m71", "name": "Mutton Boti Roll", "price": 220 },
-      { "id": "m72", "name": "Paneer Tikka Plate", "price": 260 },
-      { "id": "m73", "name": "Sheermal (side)", "price": 80 }
+      {
+        "id": "m70",
+        "name": "Chicken Sheekh Roll",
+        "price": 180
+      },
+      {
+        "id": "m71",
+        "name": "Mutton Boti Roll",
+        "price": 220
+      },
+      {
+        "id": "m72",
+        "name": "Paneer Tikka Plate",
+        "price": 260
+      },
+      {
+        "id": "m73",
+        "name": "Sheermal (side)",
+        "price": 80
+      }
     ]
   },
   {
     "id": "r19",
     "name": "Smoke House Deli",
-    "cuisine": ["BBQ", "Deli"],
+    "cuisine": [
+      "BBQ",
+      "Deli"
+    ],
     "rating": 4.2,
     "costForTwo": 900,
     "image": "https://img-cdn.publive.online/fit-in/640x430/filters:format(webp)/hospibuz/media/post_attachments/wp-content/uploads/2023/07/SHD_Colaba-Mumbai.jpg",
     "deliveryTimeMins": 34,
     "shortDescription": "Smoked meats, sandwiches and gourmet deli items.",
     "menu": [
-      { "id": "m74", "name": "Smoked Brisket Sandwich", "price": 520 },
-      { "id": "m75", "name": "Pulled Pork", "price": 480 },
-      { "id": "m76", "name": "Coleslaw", "price": 120 },
-      { "id": "m77", "name": "Loaded Fries", "price": 220 }
+      {
+        "id": "m74",
+        "name": "Smoked Brisket Sandwich",
+        "price": 520
+      },
+      {
+        "id": "m75",
+        "name": "Pulled Pork",
+        "price": 480
+      },
+      {
+        "id": "m76",
+        "name": "Coleslaw",
+        "price": 120
+      },
+      {
+        "id": "m77",
+        "name": "Loaded Fries",
+        "price": 220
+      }
     ]
   },
   {
     "id": "r20",
     "name": "Goli Vada Pav",
-    "cuisine": ["Street Food", "Fast Food"],
+    "cuisine": [
+      "Street Food",
+      "Fast Food"
+    ],
     "rating": 4.1,
     "costForTwo": 220,
     "image": "https://images.ft.com/v3/image/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2Fc3f2218a-f5bf-11e1-a6bb-00144feabdc0?source=next-article&fit=scale-down&quality=highest&width=700&dpr=1",
     "deliveryTimeMins": 18,
     "shortDescription": "Quick Mumbai-style vada pav and spicy snacks for a fast bite.",
     "menu": [
-      { "id": "m78", "name": "Classic Vada Pav", "price": 60 },
-      { "id": "m79", "name": "Schezwan Fries", "price": 140 },
-      { "id": "m80", "name": "Masala Chai", "price": 30 },
-      { "id": "m81", "name": "Samosa (2 pc)", "price": 80 }
+      {
+        "id": "m78",
+        "name": "Classic Vada Pav",
+        "price": 60
+      },
+      {
+        "id": "m79",
+        "name": "Schezwan Fries",
+        "price": 140
+      },
+      {
+        "id": "m80",
+        "name": "Masala Chai",
+        "price": 30
+      },
+      {
+        "id": "m81",
+        "name": "Samosa (2 pc)",
+        "price": 80
+      }
     ]
   },
   {
     "id": "r21",
     "name": "Krispy Kreme",
-    "cuisine": ["Dessert", "Bakery"],
+    "cuisine": [
+      "Dessert",
+      "Bakery"
+    ],
     "rating": 4.0,
     "costForTwo": 320,
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTE7bhKVm94OURkjf8xeTPQw0P6is1Vsbabw&s",
     "deliveryTimeMins": 22,
     "shortDescription": "Donuts, coffees and sweet treats — popular chain spot.",
     "menu": [
-      { "id": "m82", "name": "Original Glazed (6 pc)", "price": 380 },
-      { "id": "m83", "name": "Chocolate Donut", "price": 90 },
-      { "id": "m84", "name": "Hot Chocolate", "price": 160 },
-      { "id": "m85", "name": "Coffee (Large)", "price": 140 }
+      {
+        "id": "m82",
+        "name": "Original Glazed (6 pc)",
+        "price": 380
+      },
+      {
+        "id": "m83",
+        "name": "Chocolate Donut",
+        "price": 90
+      },
+      {
+        "id": "m84",
+        "name": "Hot Chocolate",
+        "price": 160
+      },
+      {
+        "id": "m85",
+        "name": "Coffee (Large)",
+        "price": 140
+      }
     ]
   },
   {
     "id": "r22",
     "name": "Momo Nation",
-    "cuisine": ["Tibetan", "Chinese"],
+    "cuisine": [
+      "Tibetan",
+      "Chinese"
+    ],
     "rating": 4.2,
     "costForTwo": 420,
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVv6Qr7LYcTCKSVGMT0-AcTLNMYRe3rElSwg&s",
     "deliveryTimeMins": 22,
     "shortDescription": "Steamed and fried momos with spicy chutneys and sauces.",
     "menu": [
-      { "id": "m86", "name": "Veg Steamed Momos (8 pc)", "price": 220 },
-      { "id": "m87", "name": "Chicken Fried Momos (8 pc)", "price": 260 },
-      { "id": "m88", "name": "Momos with Schezwan", "price": 60 },
-      { "id": "m89", "name": "Manchow Soup (bowl)", "price": 140 }
+      {
+        "id": "m86",
+        "name": "Veg Steamed Momos (8 pc)",
+        "price": 220
+      },
+      {
+        "id": "m87",
+        "name": "Chicken Fried Momos (8 pc)",
+        "price": 260
+      },
+      {
+        "id": "m88",
+        "name": "Momos with Schezwan",
+        "price": 60
+      },
+      {
+        "id": "m89",
+        "name": "Manchow Soup (bowl)",
+        "price": 140
+      }
     ]
   },
   {
     "id": "r23",
     "name": "Sattvam (Pure Veg)",
-    "cuisine": ["Vegetarian", "Fine Dining"],
+    "cuisine": [
+      "Vegetarian",
+      "Fine Dining"
+    ],
     "rating": 4.3,
     "costForTwo": 1200,
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYIvL-0-Dz5NmjO_Az90wXDrW6istSSwLSyw&s",
     "deliveryTimeMins": 40,
     "shortDescription": "Upscale pure veg cuisine with sattvic classics and thalis.",
     "menu": [
-      { "id": "m90", "name": "Deluxe Veg Thali", "price": 650 },
-      { "id": "m91", "name": "Paneer Lababdar", "price": 320 },
-      { "id": "m92", "name": "Dal Tadka (sm)", "price": 160 },
-      { "id": "m93", "name": "Gulab Jamun (2 pc)", "price": 90 }
+      {
+        "id": "m90",
+        "name": "Deluxe Veg Thali",
+        "price": 650
+      },
+      {
+        "id": "m91",
+        "name": "Paneer Lababdar",
+        "price": 320
+      },
+      {
+        "id": "m92",
+        "name": "Dal Tadka (sm)",
+        "price": 160
+      },
+      {
+        "id": "m93",
+        "name": "Gulab Jamun (2 pc)",
+        "price": 90
+      }
     ]
   },
   {
     "id": "r24",
     "name": "Adigas",
-    "cuisine": ["South Indian", "Vegetarian"],
+    "cuisine": [
+      "South Indian",
+      "Vegetarian"
+    ],
     "rating": 4.0,
     "costForTwo": 320,
     "image": "https://images.jdmagicbox.com/v2/comp/bangalore/p9/080pxx80.xx80.141031125319.v1p9/catalogue/vasudev-adigas-kengeri-satelite-town-bangalore-south-indian-restaurants-2liuw.jpg",
     "deliveryTimeMins": 24,
     "shortDescription": "Family-friendly veg dining chain with dosa and tiffin options.",
     "menu": [
-      { "id": "m94", "name": "Paper Masala Dosa", "price": 150 },
-      { "id": "m95", "name": "Uttapam (Onion)", "price": 140 },
-      { "id": "m96", "name": "Ghee Pongal", "price": 120 },
-      { "id": "m97", "name": "Filter Coffee", "price": 50 }
+      {
+        "id": "m94",
+        "name": "Paper Masala Dosa",
+        "price": 150
+      },
+      {
+        "id": "m95",
+        "name": "Uttapam (Onion)",
+        "price": 140
+      },
+      {
+        "id": "m96",
+        "name": "Ghee Pongal",
+        "price": 120
+      },
+      {
+        "id": "m97",
+        "name": "Filter Coffee",
+        "price": 50
+      }
     ]
   },
   {
     "id": "r25",
     "name": "The Only Place",
-    "cuisine": ["Continental", "Burgers"],
+    "cuisine": [
+      "Continental",
+      "Burgers"
+    ],
     "rating": 4.4,
     "costForTwo": 900,
     "image": "https://media-cdn.tripadvisor.com/media/photo-s/01/5b/3b/82/the-only-place.jpg",
     "deliveryTimeMins": 35,
     "shortDescription": "Classic steaks, burgers and American-style large portions.",
     "menu": [
-      { "id": "m98", "name": "Ribeye Steak (200g)", "price": 820 },
-      { "id": "m99", "name": "Signature Burger", "price": 450 },
-      { "id": "m100", "name": "BBQ Ribs (Half)", "price": 620 },
-      { "id": "m101", "name": "Coleslaw (side)", "price": 120 }
+      {
+        "id": "m98",
+        "name": "Ribeye Steak (200g)",
+        "price": 820
+      },
+      {
+        "id": "m99",
+        "name": "Signature Burger",
+        "price": 450
+      },
+      {
+        "id": "m100",
+        "name": "BBQ Ribs (Half)",
+        "price": 620
+      },
+      {
+        "id": "m101",
+        "name": "Coleslaw (side)",
+        "price": 120
+      }
     ]
   },
   {
     "id": "r26",
     "name": "Dosa Ghar",
-    "cuisine": ["South Indian", "Street Food"],
+    "cuisine": [
+      "South Indian",
+      "Street Food"
+    ],
     "rating": 4.2,
     "costForTwo": 240,
     "image": "https://b.zmtcdn.com/data/pictures/chains/1/18138461/4cd6489c0930d1b16b9b5f18bae76faf.jpg?fit=around|960:500&crop=960:500;*,*",
     "deliveryTimeMins": 20,
     "shortDescription": "Popular dosa joint serving different dosa styles and chutneys.",
     "menu": [
-      { "id": "m102", "name": "Paper Masala Dosa", "price": 150 },
-      { "id": "m103", "name": "Rava Masala Dosa", "price": 140 },
-      { "id": "m104", "name": "Coconut Chutney (side)", "price": 20 },
-      { "id": "m105", "name": "Sada Dosa", "price": 90 }
+      {
+        "id": "m102",
+        "name": "Paper Masala Dosa",
+        "price": 150
+      },
+      {
+        "id": "m103",
+        "name": "Rava Masala Dosa",
+        "price": 140
+      },
+      {
+        "id": "m104",
+        "name": "Coconut Chutney (side)",
+        "price": 20
+      },
+      {
+        "id": "m105",
+        "name": "Sada Dosa",
+        "price": 90
+      }
     ]
   },
   {
     "id": "r27",
     "name": "Shivaji Military Hotel",
-    "cuisine": ["Karnataka", "Non-Veg"],
+    "cuisine": [
+      "Karnataka",
+      "Non-Veg"
+    ],
     "rating": 4.5,
     "costForTwo": 550,
     "image": "https://img-cdn.publive.online/fit-in/640x430/filters:format(webp)/english-betterindia/media/post_attachments/uploads/2021/01/shivaji-1.jpg",
     "deliveryTimeMins": 32,
     "shortDescription": "Traditional military hotel serving robust meat curries and biryanis.",
     "menu": [
-      { "id": "m106", "name": "Chicken Biryani (Military)", "price": 280 },
-      { "id": "m107", "name": "Mutton Pepper Fry", "price": 340 },
-      { "id": "m108", "name": "Neer Dosa", "price": 120 },
-      { "id": "m109", "name": "Ghee Rice (side)", "price": 110 }
+      {
+        "id": "m106",
+        "name": "Chicken Biryani (Military)",
+        "price": 280
+      },
+      {
+        "id": "m107",
+        "name": "Mutton Pepper Fry",
+        "price": 340
+      },
+      {
+        "id": "m108",
+        "name": "Neer Dosa",
+        "price": 120
+      },
+      {
+        "id": "m109",
+        "name": "Ghee Rice (side)",
+        "price": 110
+      }
     ]
   },
   {
     "id": "r28",
     "name": "Sree Krishna Bhavan",
-    "cuisine": ["South Indian", "Vegetarian"],
+    "cuisine": [
+      "South Indian",
+      "Vegetarian"
+    ],
     "rating": 4.1,
     "costForTwo": 300,
     "image": "https://b.zmtcdn.com/data/pictures/4/20842914/f3b77e2f7351da9cf5cdb20f06aa2617.png",
     "deliveryTimeMins": 26,
     "shortDescription": "Affordable tiffin and pongal spot loved by the local crowd.",
     "menu": [
-      { "id": "m110", "name": "Ven Pongal with Sambar", "price": 110 },
-      { "id": "m111", "name": "Rava Masala Dosa", "price": 140 },
-      { "id": "m112", "name": "Sweet Pongal", "price": 80 },
-      { "id": "m113", "name": "Filter Coffee", "price": 50 }
+      {
+        "id": "m110",
+        "name": "Ven Pongal with Sambar",
+        "price": 110
+      },
+      {
+        "id": "m111",
+        "name": "Rava Masala Dosa",
+        "price": 140
+      },
+      {
+        "id": "m112",
+        "name": "Sweet Pongal",
+        "price": 80
+      },
+      {
+        "id": "m113",
+        "name": "Filter Coffee",
+        "price": 50
+      }
     ]
   },
   {
     "id": "r29",
     "name": "Samosa Singh (Street Stall)",
-    "cuisine": ["Street Food", "Snacks"],
+    "cuisine": [
+      "Street Food",
+      "Snacks"
+    ],
     "rating": 4.0,
     "costForTwo": 120,
     "image": "https://b.zmtcdn.com/data/pictures/8/19337938/79bf314c23bbebf7b4ae4838efbe39e5.jpg?fit=around|750:500&crop=750:500;*,*",
     "deliveryTimeMins": 16,
     "shortDescription": "Quick samosas, chaat and spicy snack bites for on-the-go cravings.",
     "menu": [
-      { "id": "m114", "name": "Aloo Samosa (2 pc)", "price": 60 },
-      { "id": "m115", "name": "Sev Puri", "price": 90 },
-      { "id": "m116", "name": "Aloo Tikki", "price": 80 },
-      { "id": "m117", "name": "Sweet Lassi", "price": 80 }
+      {
+        "id": "m114",
+        "name": "Aloo Samosa (2 pc)",
+        "price": 60
+      },
+      {
+        "id": "m115",
+        "name": "Sev Puri",
+        "price": 90
+      },
+      {
+        "id": "m116",
+        "name": "Aloo Tikki",
+        "price": 80
+      },
+      {
+        "id": "m117",
+        "name": "Sweet Lassi",
+        "price": 80
+      }
     ]
   },
   {
     "id": "r30",
     "name": "Rolls & Biryani (MG Road)",
-    "cuisine": ["Rolls", "Biryani", "Fast Food"],
+    "cuisine": [
+      "Rolls",
+      "Biryani",
+      "Fast Food"
+    ],
     "rating": 4.1,
     "costForTwo": 320,
     "image": "https://b.zmtcdn.com/data/pictures/7/19388777/f81e17eaa91a1ccf1e7e1e1291a90f6f.jpg?fit=around|960:500&crop=960:500;*,*",
     "deliveryTimeMins": 26,
     "shortDescription": "Quick rolls and plate biryanis with spicy gravies for late-night orders.",
     "menu": [
-      { "id": "m118", "name": "Egg Chicken Roll", "price": 140 },
-      { "id": "m119", "name": "Veg Roll", "price": 120 },
-      { "id": "m120", "name": "Butter Chicken Biryani", "price": 360 },
-      { "id": "m121", "name": "Paneer Roll", "price": 160 }
+      {
+        "id": "m118",
+        "name": "Egg Chicken Roll",
+        "price": 140
+      },
+      {
+        "id": "m119",
+        "name": "Veg Roll",
+        "price": 120
+      },
+      {
+        "id": "m120",
+        "name": "Butter Chicken Biryani",
+        "price": 360
+      },
+      {
+        "id": "m121",
+        "name": "Paneer Roll",
+        "price": 160
+      }
     ]
   }
 ]
