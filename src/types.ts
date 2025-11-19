@@ -29,3 +29,15 @@ export type Restaurant = {
   menu?: MenuItem[];
 };
 
+// add to src/types.ts
+export type CartItem = {
+  id: string;              // unique id for cart entry, we use `${restaurantId}__${itemId}`
+  restaurantId: string;
+  restaurantName?: string;
+  itemId: string;          // id of menu item
+  name: string;
+  price: number;
+  qty: number;
+  notes?: string;
+};
+

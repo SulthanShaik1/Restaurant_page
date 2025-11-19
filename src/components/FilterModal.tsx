@@ -95,13 +95,16 @@ export default function FilterModal({
     <div className="modal show d-block" tabIndex={-1} aria-modal="true">
       <div className="modal-dialog modal-dialog-centered modal-lg">
         <div className="modal-content">
-          <div className="modal-header align-items-center">
-            <h5 className="modal-title">Filters</h5>
+          <div className="modal-header d-flex justify-content-between align-items-center">
+            <h5 className="modal-title m-0">Filters</h5>
 
-            <div className="d-flex gap-2">
-              <button className="btn-close" onClick={onClose} />
-            </div>
+            <button
+              className="btn-close"
+              onClick={onClose}
+              aria-label="Close"
+            />
           </div>
+
 
           <div className="modal-body">
             {/* Search */}

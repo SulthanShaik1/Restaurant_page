@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useCart } from "../contexts/CartContext";
+import { useCart } from "../context/CartContext";
 
 export default function RestaurantModal({
   show,
@@ -10,7 +10,7 @@ export default function RestaurantModal({
   onHide: () => void;
   restaurant: any | null;
 }) {
-  const { addToCart } = useCart();
+  const { addItem } = useCart();
   const [addedIds, setAddedIds] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
@@ -23,10 +23,10 @@ export default function RestaurantModal({
     "https://source.unsplash.com/1600x900/?restaurant-food&sig=fallback";
 
   const handleAdd = (menuItem: any) => {
-    addToCart({
+    addItem({
       restaurantId: restaurant.id,
       restaurantName: restaurant.name,
-      menuId: menuItem.id,
+      itemId: menuItem.id,
       name: menuItem.name,
       price: Number(menuItem.price) || 0,
     });

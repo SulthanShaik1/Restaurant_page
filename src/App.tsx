@@ -7,21 +7,30 @@ import RestaurantCard from "./components/RestaurantCard";
 import RestaurantModal from "./components/RestaurantModal";
 import type { Restaurant } from "./types";
 
-export default function App() {
+import { CartProvider, useCart } from "./context/CartContext";
+import CartSidebar from "./components/CartSidebar";
+
+function AppInner() {
   const { results, cuisines, filters, setFilter, loading, error } = useRestaurants();
 
   const [filterOpen, setFilterOpen] = useState(false);
   const [selected, setSelected] = useState<Restaurant | null>(null);
+
+  // Cart state
+  const [cartOpen, setCartOpen] = useState(false);
+  const { getCount } = useCart();
 
   const modalInitial: ModalFilters = {
     query: filters.search ?? "",
     cuisines: Array.isArray(filters.cuisines)
       ? filters.cuisines
       : typeof filters.cuisine === "string" && filters.cuisine !== "All"
-      ? filters.cuisine.split(",").map((s: string) => s.trim()).filter(Boolean)
-      : [],
+        ? filters.cuisine.split(",").map((s: string) => s.trim()).filter(Boolean)
+        : [],
     minRating: filters.minRating ?? 0,
-    sortBy: (filters.sortBy === "" ? "relevance" : (filters.sortBy as ModalFilters["sortBy"])) ?? "relevance",
+    sortBy:
+      (filters.sortBy === "" ? "relevance" : (filters.sortBy as ModalFilters["sortBy"])) ??
+      "relevance",
   };
 
   const onApplyModal = (f: ModalFilters) => {
@@ -53,15 +62,33 @@ export default function App() {
           <h5 className="text-muted">Bringing your favourite food even closer to your door.</h5>
         </div>
 
+        {/* RIGHT SIDE OF HEADER - Cart button sits before Sign In */}
         <div className="d-flex align-items-center gap-3">
           <button
-            className="filters-btn header-only"
+            className="btn btn-outline-secondary d-flex align-items-center"
             onClick={() => setFilterOpen(true)}
-          >
-            Filters
+            style={{ gap: 6 }}>
+            🎛️ Filters
           </button>
 
+
           <button className="btn btn-outline-secondary">Login</button>
+
+          {/* Cart button styled same as other header buttons */}
+          <button
+            className="btn btn-outline-secondary d-flex align-items-center"
+            onClick={() => setCartOpen(true)}
+            aria-label="Open cart"
+            title="Cart"
+            style={{ gap: 8 }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+              <path d="M7 4h-2l-1 2h-1v2h1l2 8h12v-2h-11l-1-4h12v-2h-12l1-4z" />
+            </svg>
+            <span>Cart</span>
+            {/* show badge only when there are items */}
+            {getCount() > 0 && <span className="cart-badge" aria-hidden="true">{getCount()}</span>}
+          </button>
 
           <button className="btn btn-accent">Sign In</button>
         </div>
@@ -79,19 +106,21 @@ export default function App() {
           </div>
 
           <div>
-            {(filters.search || (Array.isArray(filters.cuisines) && filters.cuisines.length > 0) || filters.minRating > 0) && (
-              <button
-                className="btn btn-sm btn-outline-secondary"
-                onClick={() => {
-                  setFilter("search", "");
-                  setFilter("cuisines", []);
-                  setFilter("minRating", 0);
-                  setFilter("sortBy", "");
-                }}
-              >
-                Clear filters
-              </button>
-            )}
+            {(filters.search ||
+              (Array.isArray(filters.cuisines) && filters.cuisines.length > 0) ||
+              filters.minRating > 0) && (
+                <button
+                  className="btn btn-sm btn-outline-secondary"
+                  onClick={() => {
+                    setFilter("search", "");
+                    setFilter("cuisines", []);
+                    setFilter("minRating", 0);
+                    setFilter("sortBy", "");
+                  }}
+                >
+                  Clear filters
+                </button>
+              )}
           </div>
         </div>
 
@@ -121,16 +150,28 @@ export default function App() {
         onClear={onClearModal}
       />
 
-      <button className="filters-fab" onClick={() => setFilterOpen(true)}>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ marginRight: 6 }}>
-          <path d="M10 18h4v-2h-4v2zm-7-9v2h18V9H3zm4-5v2h10V4H7z" fill="currentColor" />
-        </svg>
-        Filters
-      </button>
-
       {selected && (
-        <RestaurantModal restaurant={selected} show={!!selected} onHide={() => setSelected(null)} />
+        <RestaurantModal
+          restaurant={selected}
+          show={!!selected}
+          onHide={() => setSelected(null)}
+        />
       )}
+
+      {/*  CART SIDEBAR */}
+      <CartSidebar
+        show={cartOpen}
+        onClose={() => setCartOpen(false)}
+        onCheckout={() => alert("Checkout flow pending")}
+      />
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <CartProvider>
+      <AppInner />
+    </CartProvider>
   );
 }
