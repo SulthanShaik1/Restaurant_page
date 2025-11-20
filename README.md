@@ -96,12 +96,12 @@ restaurant-app/
 ## How to Run
 
 1. Install dependencies
-   npm install
+   - npm install
 
-2. Start development server
-   npm run dev
+3. Start development server
+   - npm run dev
 
-3. Open in browser
+4. Open in browser
    http://localhost:5173
 
 ---
