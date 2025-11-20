@@ -10,7 +10,7 @@ import type { Restaurant } from "./types";
 import { CartProvider, useCart } from "./context/CartContext";
 import CartSidebar from "./components/CartSidebar";
 
-import Hero from "./components/Hero"; // <-- new
+import Hero from "./components/Hero";
 
 function AppInner() {
   const { results, cuisines, filters, setFilter, loading, error } = useRestaurants();
@@ -69,7 +69,6 @@ function AppInner() {
     const hasMinRating = !!(filters.minRating && Number(filters.minRating) > 0);
     return hasSearch || hasCuisines || hasMinRating;
   }, [filters]);
-  // -----------------------------------------------------------
 
   return (
     <>
@@ -94,7 +93,6 @@ function AppInner() {
 
           <button className="btn btn-outline-secondary">Login</button>
 
-          {/* Cart button styled same as other header buttons */}
           <button
             className="btn btn-outline-secondary d-flex align-items-center filters-btn gap-8"
             onClick={() => setCartOpen(true)}

@@ -1,10 +1,3 @@
-/* ===========================
-   src/App.css — FINAL MERGED & CLEAN
-   Consolidates: src/App.css, src/index.css,
-                 src/components/Hero.css, src/styles/responsive.css
-   Finalized for single-file styling (images, components, utilities)
-   =========================== */
-
 /* ---------- Variables ---------- */
 :root{
   --accent: #ff4d4f;            /* main red accent */
@@ -206,7 +199,7 @@ body {
 .modal-image { height: 240px; object-fit: cover; width:100%; display:block; }
 .modal-dialog { max-width: 95%; margin: 1.25rem auto; }
 
-/* ---------- Utility classes (for replacing inline styles) ---------- */
+/* ---------- Utility classes---------- */
 .gap-6 { gap: 6px !important; }
 .gap-8 { gap: 8px !important; }
 
@@ -329,7 +322,6 @@ body {
 /* small text color helper (if not using .text-muted everywhere) */
 .text-muted-custom { color: var(--muted) !important; }
 
-/* ---------- Component helpers (cart/modal/buttons) ---------- */
 /* Cart sidebar / overlay */
 .cart-overlay {
   position: fixed;

@@ -2,7 +2,6 @@
 import { useEffect, useMemo, useState } from "react";
 import type { Restaurant } from "../types";
 
-// keep exported signature the same as before
 export function useRestaurants() {
   const [all, setAll] = useState<Restaurant[]>([]);
   const [loading, setLoading] = useState(false);

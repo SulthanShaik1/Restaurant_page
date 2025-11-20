@@ -1,12 +1,10 @@
 // src/types.ts
 export type Filters = {
   query?: string;
-  // new: allow multiple cuisine selections
-  cuisines?: string[]; // prefer this for new code
-  // backwards-compatible single-string cuisine (comma separated) may still appear from older code
+  //allow multiple cuisine selections
+  cuisines?: string[];
   cuisine?: string | null;
   minRating?: number;
-  // 'relevance' kept for modal; useRestaurants will map to internal sort keys
   sortBy?: "relevance" | "rating" | "deliveryTime" | "minOrder" | "";
 };
 
@@ -19,8 +17,8 @@ export type MenuItem = {
 export type Restaurant = {
   id: string;
   name: string;
-  cuisine?: string[] | string; // some data files use array (your restaurants.json uses array)
-  cuisines?: string[]; // normalized form (hook will use this)
+  cuisine?: string[] | string;
+  cuisines?: string[]; 
   rating?: number;
   costForTwo?: number;
   image?: string;
@@ -29,12 +27,11 @@ export type Restaurant = {
   menu?: MenuItem[];
 };
 
-// add to src/types.ts
 export type CartItem = {
   id: string;              // unique id for cart entry, we use `${restaurantId}__${itemId}`
   restaurantId: string;
   restaurantName?: string;
-  itemId: string;          // id of menu item
+  itemId: string;         
   name: string;
   price: number;
   qty: number;

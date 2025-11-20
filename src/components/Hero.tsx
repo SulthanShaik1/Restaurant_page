@@ -1,5 +1,5 @@
 // src/components/Hero.tsx
-import heroImg from "../assets/Hero.jpeg"; // adjust path if needed
+import heroImg from "../assets/Hero.jpeg";
 
 export default function Hero() {
   return (

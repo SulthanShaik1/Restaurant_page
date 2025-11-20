@@ -1,104 +1,134 @@
-# 🍽️ HungryNow – Restaurant Listing Web App  
-**Built with React + TypeScript + Vite**
+🍽️ KhaanaNow24 – Modern Restaurant Discovery Web App
+React + TypeScript + Vite • Clean UI • Responsive • Filters • Cart System
 
-This is a clean and simple restaurant listing web application that I created for the **Binaried Technologies technical assignment**.  
-The app shows restaurants, allows searching, filtering, and opens a modal to view more details.  
-I kept the UI minimal, fast, and easy to use.
+KhaanaNow24 is a fast, modern, mobile-friendly restaurant discovery web application.
+It allows users to browse restaurants, apply filters, view restaurant details, and manage an interactive cart — all implemented with a clean architecture and responsive UI.
 
----------------------------------------------------------------------
+---
 
-##  Features I Implemented
+## Features
 
-- Restaurant list display  
-- Search (works on name + menu items)  
-- Filter by cuisine  
-- Filter by minimum rating  
-- Simple sorting support  
-- Restaurant modal with details + menu  
-- Responsive layout for mobile + desktop  
-- Images with fallback handling  
-- Clean UI using Bootstrap + custom CSS  
+### Hero Banner
+- Beautiful responsive hero image showcasing the food theme.
 
-----------------------------------------------------------------------
+### Restaurant Listings
+- Clean card-based layout
+- High-quality, uniform images
+- Hover animations
+- Fully responsive grid layout
 
-##  Tech Stack
+### Advanced Filters
+- Search by restaurant or menu name
+- Filter by cuisine
+- Filter by minimum rating
+- Sort by rating, delivery time, or cost
+- Responsive filter modal
 
-**Frontend:**  
-- React  
-- TypeScript  
-- Vite  
-- Bootstrap 5  
-- Custom CSS
+### Cart System
+- Toggleable cart sidebar
+- Add/remove dish items
+- Quantity controls
+- Auto-calculated totals
 
-**Data:**  
-- Local JSON file (`public/data/restaurants.json`)  
-- No backend or database required for this assignment  
+### Restaurant Modal
+- Detailed restaurant info
+- Menu preview
+- Responsive flexible grid
+- Clean typography and spacing
 
------------------------------------------------------------------------
+### Perfect Responsiveness
+- Optimized for all screen sizes:
+  Mobile → Tablet → Desktop → Extra small screens
 
-##  Screenshots (optional)
-*(You can add images later before submitting)*
+### Modern Styling
+- Single consolidated App.css
+- Utility-first classes for spacing, layout, and typography
+- Smooth transitions
+- Strong color palette using CSS variables
 
+---
 
-------------------------------------------------------------------------
+## Tech Stack
 
-##  Project Structure
+| Technology      | Purpose                      |
+| --------------- | ---------------------------- |
+| **React 18**    | UI Components                |
+| **TypeScript**  | Safer code, type definitions |
+| **Vite**        | Fast dev server + build      |
+| **Bootstrap 5** | Layout utilities             |
+| **Custom CSS**  | Final polished UI            |
+| **Context API** | Cart state management        |
+| **Local JSON**  | Static restaurant data       |
 
-project/
-│── public/
-│ └── data/
-│ └── restaurants.json
+---
+
+## Project Structure
+
+restaurant-app/
 │
-│── src/
-│ ├── components/
-│ │ ├── RestaurantCard.tsx
-│ │ ├── RestaurantModal.tsx
-│ │ └── FilterPanel.tsx
-│ │
-│ ├── App.tsx
-│ ├── App.css
-│ ├── main.tsx
-│ └── types.ts
+├── public/
+│   └── data/
+│       └── restaurants.json
 │
-└── README.md
+├── src/
+│   ├── components/
+│   │   ├── Hero.tsx
+│   │   ├── RestaurantCard.tsx
+│   │   ├── RestaurantModal.tsx
+│   │   ├── FilterModal.tsx
+│   │   ├── CartSidebar.tsx
+│   │
+│   ├── context/
+│   │   └── CartContext.tsx
+│   │
+│   ├── hooks/
+│   │   └── useRestaurants.ts
+│   │
+│   ├── types.ts
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── App.css           # Single stylesheet for the whole project
+│
+└── package.json
 
--------------------------------------------------------------------------
+---
 
-##  How to Run the Project
+## How to Run
 
-### 1. Install dependencies:
-npm install
+1. Install dependencies
+   npm install
 
-### 2. Start development server:
-npm run dev
+2. Start development server
+   npm run dev
 
-### 3. Open in browser:
-http://localhost:5173
+3. Open in browser
+   http://localhost:5173
 
----------------------------------------------------------------------------
+---
 
-##  Notes
+##  Preview
 
-- All restaurant data is inside `public/data/restaurants.json`  
-- Entire application runs on the frontend  
-- No backend or database used  
-- UI is kept light and simple  
-- Built specifically for the assignment  
+###  Home Page
+![Home Page](./screenshots/Home.png)
 
-----------------------------------------------------------------------------
+### Home Restaurant Cards
+![Home Restauarnt Cards](./screenshots/Home_Restaurant_cards.png)
 
-##  Demo Video  
-(A separate video has been recorded showing:)  
-- How the app works  
-- Search and filters  
-- Modal view  
-- Code walkthrough  
-- Folder structure  
+###  Filters Modal
+![Filters](./screenshots/Filters.png)
 
------------------------------------------------------------------------------
+### Filtered Restaurant Cards
+![Filtered Restaurant Cards](./screenshots/Filtered_Restaurant_cards.png)
 
-##  Developer  
-**Shaik Sulthan**
+### Restauarnt Card View
+![Restaurant Card View](./screenshots/Restaurant_card.png)
 
-I built this project fully using React + TypeScript and used simple UI techniques to keep everything readable and clean.
+###  Cart Sidebar
+![Cart Sidebar](./screenshots/Cart.png)
 
+---
+
+## Developer
+
+Shaik Sulthan
+Frontend Developer • React • TypeScript • UI/UX
